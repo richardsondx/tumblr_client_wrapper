@@ -8,5 +8,4 @@ env:
   - RAILS_VERSION="~> 4.2.0"
 
 before_install:
-  - gem update --system
-  - gem --version
+  - gem install bundle '1.10.0'
