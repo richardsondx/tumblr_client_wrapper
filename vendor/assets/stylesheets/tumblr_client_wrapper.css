@@ -1,0 +1,14 @@
+.post_content{}
+.post_content .post_title{}
+.post_content .post_title blockquote{
+    font: 100%/1.5 Avenir, Arial;
+    font-size: 1.5rem;
+
+}
+.post_content .extra_large{}
+
+.post_body{}
+.post_body p{
+    font-size: 1rem;
+    font: 100%/1.5 Avenir, Arial;
+}
