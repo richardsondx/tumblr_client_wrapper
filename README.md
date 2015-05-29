@@ -1,10 +1,10 @@
 [![Build Status](https://travis-ci.org/richardsondx/tumblr_client_wrapper.svg?branch=master)](https://travis-ci.org/richardsondx/tumblr_client_wrapper) 
 
-# The Tumblr Client
+# The Tumblr Client Wrapper
 
-This gem allows you to easily embed tumblr posts ( Text, Photo, Quote, Link, Chat Audio, Video, Answer) with predefined or custom style.
+This gem allows you to easily embed tumblr posts ( Text, Photo, Quote, Link, Chat Audio, Video, Answer) to your ruby on rails view.
 
-This Tumblr gem is a Ruby Wrapper for the Tumblr-client official gem and Tumblr v2 API. 
+It's a Ruby Wrapper for the Tumblr-client official gem and Tumblr v2 API. 
 
 ## Installation
 
@@ -57,7 +57,7 @@ You can pass additional options:
 
     <%= embed_tumblr("blogid", {type: :quote, limit: 20})  %>
 
-## Style
+## Add Default or Custom Style
 
 To use the default style of the gem add the following line to application.css
 
@@ -94,5 +94,5 @@ No request is too small and I encourage everyone to get involved.
 
 ## Copyright
 
-The Tumblr Client gem is Copyright (c) 2015 - 2020 Richardson Dackam and is licensed under the MIT License.
+The Tumblr Client gem is Copyright (c) 2015 Richardson Dackam and is licensed under the MIT License.
 Tumblr is Copyright (c) Tumblr, Inc. The Tumblr gem is NOT affiliated with Tumblr, Inc.
