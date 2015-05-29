@@ -63,6 +63,20 @@ valid *options* you can pass are:
 
 <%= embed_tumblr("blogid", {type: :quote, limit: 20})  %>
 
+## Style
+
+To use the default style of the gem add the following line to application.css
+    *= require tumblr_client_wrapper.css
+
+You can edit the style of the posts by updating the following CSS classes
+
+.post_content{}
+.post_content .post_title{}
+.post_content .post_title blockquote{}
+.post_content .extra_large{}
+.post_body{}
+.post_body p{}
+.post_body p.source {}
 
 ## Requirement
 
