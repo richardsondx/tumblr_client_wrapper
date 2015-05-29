@@ -24,12 +24,12 @@ Get an OAuth key on the Tumblr websie by registering your  application
 
 Tumblr Client Wrapper uses Tumblr-Client configuration.
 
-Tumblr.configure do |config|
-  config.consumer_key = "consumer_key"
-  config.consumer_secret = "consumer_secret"
-  config.oauth_token = "access_token"
-  config.oauth_token_secret = "access_token_secret"
-end
+    Tumblr.configure do |config|
+      config.consumer_key = "consumer_key"
+      config.consumer_secret = "consumer_secret"
+      config.oauth_token = "access_token"
+      config.oauth_token_secret = "access_token_secret"
+    end
 
 To get your consumer key [register your application](register an application)
 
@@ -38,29 +38,22 @@ Use the [console](https://api.tumblr.com/console) to get your oauth_token and oa
 
 ## Usage
 
-e.g: blogid.tumblr.com
+example: blogid.tumblr.com
 
 In your view: add the following to Add *All Posts* from your blog
 
     <%= embed_tumblr("blogid") %>
 
-You can also specify an options. Such as requesting the gem to only display posts that are photos, quotes or text
-by passing an option :type followed with the type of post you'd like to dislay.
+You can also specify an options and request the gem to only display posts that are photos, quotes or text
+by passing an option :type followed by the type of post you'd like to dislay.
 
     <%= embed_tumblr("blogid", {type: "quotes"})  %>
 
 Tumblr has 8 differents type of posts: Text, Photo, Quote, Link, Chat, Audio, Video, Answer
 
 valid *options* you can pass are:
-    :params,
-    :id,
-    :tag,
-    :limit,
-    :offset,
-    :reblog_info,
-    :type,
-    :notes_info,
-    :filter
+
+`:params, :id, :tag, :limit, :offset, :reblog_info, :type, :notes_info, :filter`
 
 You can pass additional options:
 
