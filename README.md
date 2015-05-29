@@ -62,7 +62,9 @@ valid *options* you can pass are:
     :notes_info,
     :filter
 
-<%= embed_tumblr("blogid", {type: :quote, limit: 20})  %>
+You can pass additional options:
+
+    <%= embed_tumblr("blogid", {type: :quote, limit: 20})  %>
 
 ## Style
 
