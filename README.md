@@ -1,5 +1,3 @@
-status: Not Ready! I am stil writting this gem
-
 [![Build Status](https://travis-ci.org/richardsondx/tumblr_client_wrapper.svg?branch=master)](https://travis-ci.org/richardsondx/tumblr_client_wrapper) 
 
 # The Tumblr Client
