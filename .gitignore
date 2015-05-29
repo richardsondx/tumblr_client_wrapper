@@ -1,0 +1,10 @@
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+tumblr_client_wrapper-0.1.0.gem
