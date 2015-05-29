@@ -47,9 +47,11 @@ module TumblrClientWrapper
             case post_type
             when "text" 
                 title = post["title"]
-                body = post["body"]
+                body  = post["body"]
+                date  = post["date"]
                 embed += %Q(
                     <div class="post_content">
+                        <div class="post_date">#{date}</div>
                         <div class="post_container">
                             <div class="post_title">
                                 #{title}
@@ -62,9 +64,10 @@ module TumblrClientWrapper
                     )
       
             when "photo" 
-                caption    = post["caption"]
-                link_url   = post["link_url"]
-                photos     = post["photos"]
+                caption      = post["caption"]
+                link_url     = post["link_url"]
+                photos       = post["photos"]
+                date         = post["date"]
                 photos_embed = ""
                 photos.each do |photo|
                     photos_embed += %Q(
@@ -76,6 +79,7 @@ module TumblrClientWrapper
   
                 embed += %Q(
                     <div class="post_content">
+                        <div class="post_date">#{date}</div>
                         <div class="post_media">
                             #{photos_embed}
                         </div>
@@ -93,6 +97,7 @@ module TumblrClientWrapper
                 # source_title = post["source_title"]
                 embed += %Q(
                     <div class="post_content">
+                        <div class="post_date">#{date}</div>
                         <div class="post_title extra_large">
                             <blockquote>
                                 <p>#{content}</p>
@@ -102,7 +107,7 @@ module TumblrClientWrapper
                 unless source.empty?
                   embed += %Q(
                         <div class="post_body">
-                                    <p>- #{source}</p>
+                                    <p class="source">- #{source}</p>
                         </div>
                         ) 
                 end
@@ -118,9 +123,10 @@ module TumblrClientWrapper
                 publisher   = post["publisher"]
                 photos      = post["photos"]
                 description = post["description"]
-                binding.pry
+                date        = post["date"]
                 embed += %Q(
                     <div class="post_content">
+                        <div class="post_date">#{date}</div>
                         <div class="post_media">
                             <div class="link_button">
                                 <a href="#" class="link_source_container">
@@ -139,8 +145,10 @@ module TumblrClientWrapper
                 title       = post["title"]
                 body        = post["body"]
                 dialogue    = post["dialogue"]
+                date        = post["date"]
                 embed       += %Q(
                     <div class="post_content">
+                        <div class="post_date">#{date}</div>
                         <div class="post_title">Post Tile"</div>
                         <div class="post_body">
                             <ul class="conversation_lines">
@@ -160,9 +168,11 @@ module TumblrClientWrapper
                 caption       = post["caption"]
                 player        = post["player"]
                 plays         = post["plays"]
+                date          = post["date"]
   
                 embed         += %Q(
                     <div class="post_content">
+                        <div class="post_date">#{date}</div>
                         <div class="post_media" style="width: 540px; height: 304px;">
                             <iframe src="#{source_url}"></iframe>
                         </div>
@@ -177,8 +187,10 @@ module TumblrClientWrapper
                 source_title  = post["source_title"]
                 caption       = post["caption"]
                 player        = post["player"]  
+                date          = post["date"]
                 embed         += %Q(
                     <div class="post_content">
+                        <div class="post_date">#{date}</div>
                         <div class="post_media" style="width: 540px; height: 304px;">
                             <iframe src="#{source_url}"></iframe>
                         </div>

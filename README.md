@@ -4,12 +4,13 @@ status: Not Ready! I am stil writting this gem
 
 # The Tumblr Client
 
-The  Tumblr client Wrapper is a Ruby Wrapper for the Tumblr-client official gem and Tumblr v2 API. 
 This gem allows you to easily embed tumblr posts ( Text, Photo, Quote, Link, Chat Audio, Video, Answer) with predefined or custom style.
+
+This Tumblr gem is a Ruby Wrapper for the Tumblr-client official gem and Tumblr v2 API. 
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
     gem 'tumblr-client-wrapper'
     gem 'tumblr-client'
@@ -30,8 +31,37 @@ Tumblr.configure do |config|
   config.oauth_token_secret = "access_token_secret"
 end
 
+To get your consumer key [register your application](register an application)
+
+Use the [console](https://api.tumblr.com/console) to get your oauth_token and oauth_token_secret
+
+
 ## Usage
 
+e.g: blogid.tumblr.com
+
+In your view: add the following to Add *All Posts* from your blog
+<%= embed_tumblr("blogid") %>
+
+You can also specify an options. Such as requesting the gem to only display posts that are photos, quotes or text
+by passing an option :type followed with the type of post you'd like to dislay.
+
+<%= embed_tumblr("blogid", {type: "quotes"})  %>
+
+Tumblr has 8 differents type of posts: Text, Photo, Quote, Link, Chat, Audio, Video, Answer
+
+valid *options* you can pass are:
+		  :params,
+          :id,
+          :tag,
+          :limit,
+          :offset,
+          :reblog_info,
+          :type,
+          :notes_info,
+          :filter
+
+<%= embed_tumblr("blogid", {type: :quote, limit: 20})  %>
 
 
 ## Requirement
@@ -50,7 +80,8 @@ No request is too small and I encourage everyone to get involved.
 
 ## TODO
 
-1. Add setup for 'answers'
+1. Fix Options
+2. Add embed for 'answers'
 
 ## Copyright
 

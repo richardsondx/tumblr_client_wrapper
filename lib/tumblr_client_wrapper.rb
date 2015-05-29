@@ -1,4 +1,5 @@
 require "tumblr_client_wrapper/version"
+require 'tumblr_client_wrapper/engine'
 
 module TumblrClientWrapper
   require 'tumblr_client_wrapper/helpers'
