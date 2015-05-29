@@ -69,6 +69,7 @@ You can pass additional options:
 ## Style
 
 To use the default style of the gem add the following line to application.css
+
     *= require tumblr_client_wrapper.css
 
 You can edit the style of the posts by updating the following CSS classes
