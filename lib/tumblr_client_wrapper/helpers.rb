@@ -6,11 +6,8 @@ module TumblrClientWrapper
 
 
 		def embed_tumblr(blog_id, options = {})
-			embed = %Q(
-				<div class="tumblr_wraper">
-					#{embed_post(blog_id, options)}
-				</div>
-			)
+			posts = embed_post(blog_id, options)
+			return posts.html_safe
 		end
 	end
 end
