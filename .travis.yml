@@ -6,6 +6,3 @@ rvm:
   - 2.2
 env:
   - RAILS_VERSION="~> 4.2.0"
-
-before_install:
-  - gem install bundle '1.10.0'
