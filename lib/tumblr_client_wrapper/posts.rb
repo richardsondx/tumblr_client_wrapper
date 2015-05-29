@@ -39,7 +39,6 @@ module TumblrClientWrapper
     def embed_post(tumblr_id, options)
       api = ApiRequest.new
       posts = api.get_posts(tumblr_id, options)
-      # binding.pry if posts["posts"].nil?
       embed = ""
       if posts["posts"]
         posts["posts"].each do |post|
@@ -93,8 +92,6 @@ module TumblrClientWrapper
                 content      = post["text"]
                 source       = post["source"]
                 date         = post["date"]
-                # source_url   = post["source_url"]
-                # source_title = post["source_title"]
                 embed += %Q(
                     <div class="post_content">
                         <div class="post_date">#{date}</div>
