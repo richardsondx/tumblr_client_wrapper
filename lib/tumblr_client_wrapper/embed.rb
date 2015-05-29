@@ -1,46 +1,8 @@
-require 'tumblr_client'
-require 'json'
-module TumblrClientWrapper
-  module Posts
-
-    VALID_OPTION_KEYS = [
-            :params,
-            :id,
-            :tag,
-            :limit,
-            :offset,
-            :reblog_info,
-            :type,
-            :notes_info,
-            :filter
-          ]
-    class ApiRequest
-        def initialize
-            @@tumblr_client = Tumblr::Client.new(client: :httpclient)
-        end
-
-        def get_posts(tumblr_id, options)
-            unless options.present?
-                response = @@tumblr_client.posts("#{tumblr_id}.tumblr.com")
-            else
-                response = @@tumblr_client.posts("#{tumblr_id}.tumblr.com", options)
-            end
-        end
-
-        def options(&block)
-             VALID_OPTION_KEYS.each {|key| (options[key] = yield[key]) if yield[key]}
-        end
-
-        def paginate(tumbld_id, offset)
-            response = @@tumblr_client.posts("#{tumblr_id}.tumblr.com", offset: offset)
-        end
-
-    end
-
-    def embed_post(tumblr_id, options)
-        api = ApiRequest.new
-        posts = api.get_posts(tumblr_id, options)
-
+module TumblrWrapperClient
+    module Embed
+        extend TumblrWrapperClient::Posts 
+        
+        def embed_post(posts)
         posts["posts"].each do |post|
             post_type = post["type"]
             case post_type
@@ -190,4 +152,5 @@ module TumblrClientWrapper
         end
     end
   end
+    end
 end

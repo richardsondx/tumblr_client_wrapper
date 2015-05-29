@@ -6,12 +6,12 @@ require 'tumblr_client_wrapper/version'
 Gem::Specification.new do |spec|
   spec.name          = "tumblr_client_wrapper"
   spec.version       = TumblrClientWrapper::VERSION
-  spec.authors       = ["evenix"]
+  spec.authors       = ["Richardson Dackam"]
   spec.email         = ["richardsondx@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Easily embed your tumblr posts on your rails appplication}
+  spec.description   = %q{A Ruby wrapper for the Tumblr-client gem and Tumblr v2 API. The Tumblr-client-wrapper allow yout easily embed tumblr on your site}
+  spec.homepage      = "http://github.com/richardsondx/tumblr_client_wrapper"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
