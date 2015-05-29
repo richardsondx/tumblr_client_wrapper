@@ -3,3 +3,5 @@ branches:
     - master
 rvm:
   - 2.2
+env:
+  - RAILS_VERSION="~> 4.2.0"
