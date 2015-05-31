@@ -3,17 +3,6 @@ require 'json'
 module TumblrClientWrapper
   module Posts
     class ApiRequest
-      VALID_OPTION_KEYS = [
-          :params,
-          :id,
-          :tag,
-          :limit,
-          :offset,
-          :reblog_info,
-          :type,
-          :notes_info,
-          :filter
-        ]
         
       def initialize
           @@tumblr_client = Tumblr::Client.new(client: :httpclient)
@@ -25,10 +14,6 @@ module TumblrClientWrapper
           else
               response = @@tumblr_client.posts("#{tumblr_id}.tumblr.com", options)
           end
-      end
-
-      def options(&block)
-           VALID_OPTION_KEYS.each {|key| (options[key] = yield[key]) if yield[key]}
       end
 
       def paginate(tumbld_id, offset)
