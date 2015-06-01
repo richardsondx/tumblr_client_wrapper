@@ -12,7 +12,7 @@ View the [DEMO](http://tumblr-client-wrapper.herokuapp.com)
 
 Add these lines to your application's Gemfile:
 
-    gem 'tumblr-client-wrapper'
+    gem 'tumblr-client-wrapper', '0.1.1'
     gem 'tumblr-client'
 
 
