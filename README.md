@@ -6,6 +6,8 @@ This gem allows you to easily embed tumblr posts ( Text, Photo, Quote, Link, Cha
 
 It's a Ruby Wrapper for the Tumblr-client official gem and Tumblr v2 API. 
 
+View the [DEMO](http://tumblr-client-wrapper.herokuapp.com)
+
 ## Installation
 
 Add these lines to your application's Gemfile:
