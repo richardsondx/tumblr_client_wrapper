@@ -91,8 +91,7 @@ No request is too small and I encourage everyone to get involved.
 
 ## TODO
 
-1. Fix Options
-2. Add embed for 'answers'
+1. Add ability to write custom embed tag
 
 ## Copyright
 

@@ -2,6 +2,7 @@ require 'tumblr_client'
 require 'json'
 module TumblrClientWrapper
   module Posts
+    include ActionView::Helpers::DateHelper
 
     class ApiRequest
     
@@ -55,7 +56,7 @@ module TumblrClientWrapper
     def parse_text(post)
         title = post["title"]
         body  = post["body"]
-        date  = post["date"]
+        date  = time_ago_in_words(post["date"])
         embed = %Q(
             <div class="post_content">
                 <div class="post_date">#{date}</div>
@@ -75,7 +76,7 @@ module TumblrClientWrapper
         caption      = post["caption"]
         link_url     = post["link_url"]
         photos       = post["photos"]
-        date         = post["date"]
+        date         = time_ago_in_words(post["date"])
         photos_embed = ""
         photos.each do |photo|
             photos_embed = %Q(
@@ -101,7 +102,7 @@ module TumblrClientWrapper
     def parse_quote(post)
         content      = post["text"]
         source       = post["source"]
-        date         = post["date"]
+        date         = time_ago_in_words(post["date"])
         embed = %Q(
             <div class="post_content">
                 <div class="post_date">#{date}</div>
@@ -131,7 +132,7 @@ module TumblrClientWrapper
         publisher   = post["publisher"]
         photos      = post["photos"]
         description = post["description"]
-        date        = post["date"]
+        date        = time_ago_in_words(post["date"])
         embed = %Q(
             <div class="post_content">
                 <div class="post_date">#{date}</div>
@@ -154,7 +155,7 @@ module TumblrClientWrapper
         title       = post["title"]
         body        = post["body"]
         dialogue    = post["dialogue"]
-        date        = post["date"]
+        date        = time_ago_in_words(post["date"])
         embed       = %Q(
             <div class="post_content">
                 <div class="post_date">#{date}</div>
@@ -179,7 +180,7 @@ module TumblrClientWrapper
             caption       = post["caption"]
             player        = post["player"]
             plays         = post["plays"]
-            date          = post["date"]
+            date          = time_ago_in_words(post["date"])
     
             embed         = %Q(
                 <div class="post_content">
@@ -200,7 +201,7 @@ module TumblrClientWrapper
         source_title  = post["source_title"]
         caption       = post["caption"]
         player        = post["player"]  
-        date          = post["date"]
+        date          = time_ago_in_words(post["date"])
         embed         = %Q(
             <div class="post_content">
                 <div class="post_date">#{date}</div>
@@ -217,7 +218,7 @@ module TumblrClientWrapper
     def parse_answer(post)
         question      = post["question"]
         answer        = post["answer"]
-        date          = post["date"]
+        date          = time_ago_in_words(post["date"]) 
         embed         = %Q(
                 <div class="post_content">
                     <div class="post_date">#{date}</div>
